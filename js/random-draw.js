@@ -16,20 +16,17 @@ const UI_CONFIG = {
  * Render chips for displaying letters
  * @param {HTMLElement} container - Container element
  * @param {string[]} items - Items to display
- * @param {string} className - Optional additional class name
  */
-function renderChips(container, items, className = '') {
+function renderChips(container, items) {
   container.innerHTML = '';
   if (items.length === 0) {
     container.textContent = '—';
     return;
   }
-  items.forEach(item => {
-    const chip = document.createElement('div');
-    chip.className = 'chip' + (className ? ' ' + className : '');
-    chip.textContent = item;
-    container.appendChild(chip);
-  });
+  // Display as bold text separated by dashes
+  const text = items.join(' - ');
+  container.style.fontWeight = '700';
+  container.textContent = text;
 }
 
 /**
@@ -70,7 +67,7 @@ function createRoundElement(roundNumber, drawn) {
 
   const chipsDiv = document.createElement('div');
   chipsDiv.className = 'chips';
-  renderChips(chipsDiv, drawn, 'drawn');
+  renderChips(chipsDiv, drawn);
 
   const imagesDiv = document.createElement('div');
   imagesDiv.className = 'image-container';
@@ -99,8 +96,8 @@ function performAllDraws() {
     const { drawn } = drawFromPool(pool, CONFIG.DRAW_SIZE);
     const roundElement = createRoundElement(i, drawn);
 
-    // Rounds 1-5 go in left column, 6-9 in right column
-    if (i <= 5) {
+    // Snake across columns: odd rounds in left, even rounds in right
+    if (i % 2 === 1) {
       leftColumn.appendChild(roundElement);
     } else {
       rightColumn.appendChild(roundElement);
@@ -169,20 +166,12 @@ async function saveToPDF() {
       img.style.border = '2px solid #e5e7eb';
     });
 
-    // Style chips
-    const chips = round.querySelectorAll('.chip');
-    chips.forEach(chip => {
-      chip.style.display = 'inline-block';
-      chip.style.minWidth = '24px';
-      chip.style.textAlign = 'center';
-      chip.style.padding = '4px 8px';
-      chip.style.borderRadius = '999px';
-      chip.style.background = '#dbeafe';
-      chip.style.color = '#1d4ed8';
-      chip.style.fontWeight = '600';
-      chip.style.fontSize = '0.85rem';
-      chip.style.marginRight = '4px';
-    });
+    // Style text container
+    const chipsContainer = round.querySelector('.chips');
+    if (chipsContainer) {
+      chipsContainer.style.fontWeight = '700';
+      chipsContainer.style.fontSize = '0.95rem';
+    }
   });
 
   tempDiv.appendChild(title);
