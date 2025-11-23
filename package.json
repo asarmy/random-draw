@@ -1,0 +1,32 @@
+{
+  "name": "random-draw",
+  "version": "1.0.0",
+  "description": "A web-based random draw generator that simulates drawing from a pool without replacement",
+  "type": "module",
+  "main": "random-draw.html",
+  "scripts": {
+    "serve": "python3 -m http.server 8000",
+    "open": "open random-draw.html",
+    "lint": "eslint js/**/*.js",
+    "lint:fix": "eslint js/**/*.js --fix",
+    "format": "prettier --write \"**/*.{js,css,html,json,md}\""
+  },
+  "keywords": [
+    "random",
+    "draw",
+    "generator",
+    "lottery",
+    "web",
+    "html"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5"
+  },
+  "dependencies": {
+    "html2canvas": "1.4.1",
+    "jspdf": "2.5.1"
+  }
+}

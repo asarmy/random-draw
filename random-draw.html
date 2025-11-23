@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Draw Generator</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/random-draw.css" />
+  </head>
+  <body>
+    <div class="card">
+      <h1>Random Draw Generator</h1>
+      <div class="subtitle">
+        The draw is generated in accordance with USPA and FAI competition requirements.
+        Specifically, each round consists of five points sampled (without replacement) from two sets
+        of the dive pool. In other words, each round starts with a pool of 12 formations (i.e.,
+        A,B,C,D,E,F,A,B,C,D,E,F), all with an equal probability of being drawn. As each of the five
+        points is drawn, it is removed from the pool and cannot be drawn again for that round (i.e.,
+        sampling without replacement).
+        <br /><br />The sampling is performed using the Fisher-Yates shuffle, which is an algorithm
+        that produces a uniformly random permutation of the 12-element pool. This method guarantees
+        that all 12! permutations (approx. half a billion possibilities) are equally likely. The
+        first five elements of this permutation are the resulting draw. 
+        <br /><br />Questions, comments, concerns? Ask Alex Sarmiento (Elsinore CRW).
+      </div>
+
+      <div class="button-container">
+        <button id="drawBtn">Draw All Rounds</button>
+        <button id="savePdfBtn">Save to PDF</button>
+        <button onclick="window.location.href='monte-carlo-test.html'">
+          Random Draw Validation
+        </button>
+      </div>
+
+      <div class="rounds-container" id="roundsContainer">
+        <!-- Rounds will be dynamically generated here -->
+      </div>
+    </div>
+
+    <!-- External dependencies (pinned versions) -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+      integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+      integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- Application script -->
+    <script type="module" src="js/random-draw.js"></script>
+  </body>
+</html>

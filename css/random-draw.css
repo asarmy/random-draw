@@ -1,0 +1,95 @@
+/**
+ * Styles specific to random-draw.html
+ */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.card {
+  max-width: 1800px;
+  width: 100%;
+}
+
+.result-section {
+  margin-top: 18px;
+  font-size: 0.95rem;
+}
+
+.label {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.chip {
+  min-width: 28px;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--color-chip-bg);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.chip.drawn {
+  background: var(--color-chip-drawn-bg);
+  color: var(--color-chip-drawn-text);
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.letter-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid var(--color-border);
+}
+
+.note {
+  font-size: 0.8rem;
+  color: var(--color-text-tertiary);
+  margin-top: 8px;
+}
+
+.rounds-container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.round {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: var(--color-bg-secondary);
+  border-radius: 8px;
+}
+
+.round-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+}
+
+.button-container {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}

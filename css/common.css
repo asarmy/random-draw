@@ -1,0 +1,88 @@
+/**
+ * Common styles shared across all pages
+ */
+
+:root {
+  --color-bg: #f3f4f6;
+  --color-card-bg: white;
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #6b7280;
+  --color-text-tertiary: #9ca3af;
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-border: #e5e7eb;
+  --color-bg-secondary: #f9fafb;
+  --color-chip-bg: #e5e7eb;
+  --color-chip-drawn-bg: #dbeafe;
+  --color-chip-drawn-text: #1d4ed8;
+  --shadow-card: 0 12px 30px rgba(15, 23, 42, 0.12);
+  --shadow-button: 0 8px 18px rgba(37, 99, 235, 0.35);
+  --shadow-button-active: 0 4px 10px rgba(37, 99, 235, 0.3);
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+  background: var(--color-bg);
+  margin: 0;
+  padding: 0;
+  color: var(--color-text-primary);
+}
+
+.card {
+  background: var(--color-card-bg);
+  padding: 24px 28px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+}
+
+h1 {
+  font-size: 1.4rem;
+  margin-top: 0;
+  margin-bottom: 4px;
+  color: var(--color-text-primary);
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: var(--color-primary);
+  color: white;
+  transition:
+    transform 0.05s ease,
+    box-shadow 0.05s ease,
+    background 0.15s ease;
+  box-shadow: var(--shadow-button);
+}
+
+button:hover {
+  background: var(--color-primary-hover);
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: var(--shadow-button-active);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

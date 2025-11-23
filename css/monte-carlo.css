@@ -1,0 +1,70 @@
+/**
+ * Styles specific to monte-carlo-test.html
+ */
+
+body {
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.monte-carlo-card {
+  margin-bottom: 20px;
+}
+
+.monte-carlo-subtitle {
+  margin-bottom: 20px;
+}
+
+.monte-carlo-button {
+  padding: 12px 24px;
+  margin-bottom: 20px;
+}
+
+#canvas {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 12px;
+  background: var(--color-bg-secondary);
+  border-radius: 8px;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+#status {
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+#status.running {
+  color: #f59e0b;
+}
+
+#status.complete {
+  color: #059669;
+}

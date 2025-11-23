@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Draw Generator Validation</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/monte-carlo.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card monte-carlo-card">
+        <h1>Random Draw Generator Validation</h1>
+        <div class="subtitle monte-carlo-subtitle">
+          Monte Carlo sampling is used to validate the random sampling approach by computing the
+          distribution of Tops (A,B,C) and Bottoms (D,E,F) from 10,000 draws.
+          <br /><br />
+          The most likely combinations are a 3 top / 2 bottom or 2 top / 3 bottom. The least likely
+          combinations are a 0 top / 5 bottom or 5 top / 0 bottom. The distribution of 0/5, 1/4,
+          2/3, 3/2, 4/1, 5/0 is expected to be normal (Gaussian).<br /><br />
+          The histogram shows the expected distribution is recovered with the random draw generator.
+        </div>
+
+        <button id="runTest" class="monte-carlo-button">Run 10,000 Samples</button>
+        <div id="status"></div>
+
+        <canvas id="canvas" width="800" height="400"></canvas>
+
+        <button
+          onclick="window.location.href='random-draw.html'"
+          class="monte-carlo-button"
+          style="margin-top: 20px"
+        >
+          Back to Draw Generator
+        </button>
+      </div>
+    </div>
+
+    <!-- Application script -->
+    <script type="module" src="js/monte-carlo.js"></script>
+  </body>
+</html>
