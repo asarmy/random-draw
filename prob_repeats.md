@@ -37,7 +37,7 @@ $$\binom{n}{k} = \frac{n!}{k!(n-k)!}$$
 
 Dividing by $k!$ removes the effect of element order.
 
-**Example:** The pool has 12 items but only 6 unique formation types (A–F): $\binom{6}{5} = 6$
+**Example:** The pool has 12 items but only 6 unique formation types (A–F), and we draw 5: $\binom{6}{5} = 6$
 
 **Permutations** count ordered arrangements. If we choose $k$ items from $n$ distinct items (using sampling without replacement) _and_ care about their order, we multiply by $k!$:
 
@@ -89,7 +89,7 @@ First, we count the number of ways to choose $k$ items from $n$ distinct items a
 
 $$\binom{n}{k} = \frac{n!}{k!(n-k)!}$$
 
-- We draw five formations from 6 distinct formations: $\binom{6}{5} = 6$.
+- We draw 5 formations from 6 distinct formations: $\binom{6}{5} = 6$.
 
 - Now we place the drawn formations in the point slots. For example, if we draw an $A$, it can be any of the five points, so we have: $5! = 120$.
 
@@ -238,8 +238,6 @@ And our final probability for Case 3 is:
 $$P(R|\text{Case 3}) = \frac{20}{30} = \frac{2}{3}$$
 
 ## Result
-
-## Total Probability
 
 The probability that a five-element draw (taken from two copies of a six-formation dive pool) contains at least one repeated consecutive formation, counting the cyclic adjacency between Points 5 and 1, is computed as:
 
