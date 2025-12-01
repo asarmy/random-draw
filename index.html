@@ -3,55 +3,123 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Random Draw Generator</title>
+    <title>2-way CF Draw Home</title>
     <link rel="stylesheet" href="css/common.css" />
-    <link rel="stylesheet" href="css/random-draw.css" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .landing-card {
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .landing-card h1 {
+        font-size: 2rem;
+        margin-bottom: 16px;
+        line-height: 1.3;
+      }
+
+      .landing-card .subtitle {
+        margin-bottom: 36px;
+        text-align: left;
+        line-height: 1.6;
+      }
+
+      .landing-card .subtitle a {
+        color: var(--color-primary);
+        text-decoration: none;
+      }
+
+      .landing-card .subtitle a:hover {
+        text-decoration: underline;
+      }
+
+      .intro-text {
+        margin-bottom: 16px;
+      }
+
+      .feature-list {
+        margin: 0;
+        padding-left: 0;
+        list-style: none;
+      }
+
+      .feature-list li {
+        padding: 8px 0;
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .feature-list li::before {
+        content: '✓';
+        color: var(--color-primary);
+        font-weight: bold;
+        flex-shrink: 0;
+      }
+
+      .landing-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .landing-buttons button {
+        width: 100%;
+        padding: 16px 24px;
+        font-size: 1rem;
+        text-align: center;
+      }
+
+      @media (max-width: 640px) {
+        .landing-card h1 {
+          font-size: 1.6rem;
+        }
+
+        .landing-card {
+          padding: 20px;
+        }
+
+        .landing-buttons button {
+          padding: 14px 20px;
+          font-size: 0.95rem;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div class="card">
-      <h1>Random Draw Generator</h1>
+    <div class="card landing-card">
+      <h1>2-way CF Draw Viewer and Generator</h1>
       <div class="subtitle">
-        The draw is generated in accordance with USPA and FAI competition requirements.
-        Specifically, each round consists of five points sampled (without replacement) from two sets
-        of the dive pool. In other words, each round starts with a pool of 12 formations (i.e.,
-        A,B,C,D,E,F,A,B,C,D,E,F), all with an equal probability of being drawn. As each of the five
-        points is drawn, it is removed from the pool and cannot be drawn again for that round (i.e.,
-        sampling without replacement).
-        <br /><br />The sampling is performed using the Fisher-Yates shuffle, which is an algorithm
-        that produces a uniformly random permutation of the 12-element pool. This method guarantees
-        that all 12! permutations (approx. half a billion possibilities) are equally likely. The
-        first five elements of this permutation are the resulting draw. <br /><br />Questions,
-        comments, concerns? Ask Alex Sarmiento (Elsinore CRW).
+        <div class="intro-text">
+          A web application to view or generate competition draws in accordance with USPA and FAI
+          requirements. See the
+          <a href="https://github.com/asarmy/random-draw/blob/main/README.md" target="_blank"
+            >README</a
+          >
+          for more information.
+        </div>
+        <ul class="feature-list">
+          <li>Enter your own draw to view the formations and save to PDF</li>
+          <li>Generate a random draw and save to PDF</li>
+          <li>Get nerdy with statistics through empirical and theoretical validations</li>
+        </ul>
       </div>
 
-      <div class="button-container">
-        <button id="drawBtn">Draw All Rounds</button>
-        <button id="savePdfBtn">Save to PDF</button>
+      <div class="landing-buttons">
+        <button onclick="window.location.href='manual-draw.html'">Enter Your Own Draw</button>
+        <button onclick="window.location.href='random-draw.html'">Generate a Random Draw</button>
         <button onclick="window.location.href='monte-carlo-test.html'">
-          Random Draw Validation
+          Run Random Draw Validation
         </button>
       </div>
-
-      <div class="rounds-container" id="roundsContainer">
-        <!-- Rounds will be dynamically generated here -->
-      </div>
     </div>
-
-    <!-- External dependencies (pinned versions) -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
-      integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
-      integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-
-    <!-- Application script -->
-    <script type="module" src="js/random-draw.js"></script>
   </body>
 </html>

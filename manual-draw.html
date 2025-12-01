@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enter Your Own Draw</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/random-draw.css" />
+  </head>
+  <body>
+    <div class="card">
+      <h1>Enter Your Own Draw</h1>
+      <div class="subtitle">
+        Enter your draw results below. Each round should contain five formations (A-F). Each
+        formation can only appear twice per round (matching competition rules). Rounds can be
+        separated by commas, spaces, or returns. Input is case insensitive.
+        <br /><br />
+        <strong>Examples:</strong>
+        <br />• ABCDE, FAEBC, DDEFC <br />• abcde faebc ddefc <br />• ABCDE FAEBC DDEFC CABEF
+      </div>
+
+      <div class="input-section">
+        <textarea
+          id="drawInput"
+          placeholder="Enter your draws here (e.g., ABCDE, FAEBC, DDEFC)"
+          rows="4"
+        ></textarea>
+        <div id="inputError" class="error-message"></div>
+      </div>
+
+      <div class="button-container">
+        <button id="generateBtn">Generate Display</button>
+        <button id="savePdfBtn">Save to PDF</button>
+        <button onclick="window.location.href='index.html'">Back to Home</button>
+      </div>
+
+      <div class="rounds-container" id="roundsContainer">
+        <!-- Rounds will be dynamically generated here -->
+      </div>
+    </div>
+
+    <!-- External dependencies (pinned versions) -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+      integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+      integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- Application script -->
+    <script type="module" src="js/manual-draw.js"></script>
+  </body>
+</html>

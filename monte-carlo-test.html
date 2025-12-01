@@ -26,12 +26,23 @@
 
         <canvas id="canvas" width="800" height="400"></canvas>
 
+        <div class="subtitle monte-carlo-subtitle" style="margin-top: 40px">
+          The histogram below shows the empirical probability of having consecutive repeated
+          formations in a draw (e.g., ABBDF or CDEFC). The empirical probability matches the
+          theoretical probability, which is derived
+          <a href="https://github.com/asarmy/random-draw/blob/main/prob_repeats.md" target="_blank"
+            >here</a
+          >.
+        </div>
+
+        <canvas id="consecutiveCanvas" width="800" height="400" style="margin-top: 20px"></canvas>
+
         <button
           onclick="window.location.href='index.html'"
           class="monte-carlo-button"
           style="margin-top: 20px"
         >
-          Back to Draw Generator
+          Back to Home
         </button>
       </div>
     </div>

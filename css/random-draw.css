@@ -93,3 +93,30 @@ body {
   gap: 12px;
   margin-bottom: 20px;
 }
+
+.input-section {
+  margin: 20px 0;
+}
+
+#drawInput {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 100px;
+}
+
+#drawInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.error-message {
+  color: #dc2626;
+  font-size: 0.875rem;
+  margin-top: 8px;
+  min-height: 20px;
+}
