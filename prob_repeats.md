@@ -4,8 +4,6 @@
 
 Given a five-element draw from the pool of 12 (two copies each of A, B, C, D, E, F), what is the probability that at least one pair of consecutive positions contains the same formation, where "consecutive" includes a wrap-around to the top of the page?
 
-Let $R$ denote the event where at least one pair of adjacent positions in a five-element draw contains identical formations (i.e., at least one "consecutive repeat"). We compute the probability $P(R)$.
-
 ## Approach
 
 The derivation proceeds in four steps:
